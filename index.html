@@ -1,0 +1,31 @@
+Warning: truncated output (original token count: 3844)
+Total output lines: 71
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f6">
+  <meta name="description" content="Join us to celebrate Calista Kiu turning 21 on 21 November 2026 at D'Resort @ Downtown East.">
+  <title>Calista Kiu | Twenty One</title>
+  <style>
+    :root{--ink:#f4f5f6;--paper:#272c32;--muted:#707981;--silver:#9ba4ad;--line:rgba(139,148,157,.38);--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);letter-spacing:.015em}a{color:inherit}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--silver)}
+    .topbar{position:absolute;z-index:3;left:0;right:0;top:0;padding:24px 0;display:flex;justify-content:space-between;align-items:center}.brand{font-family:var(--serif);font-size:18px;letter-spacing:.08em}.topbar a{font-size:10px;text-transform:uppercase;letter-spacing:.2em;text-decoration:none;border-bottom:1px solid var(--silver);padding-bottom:7px;color:var(--paper)}
+    .hero{min-height:720px;height:min(92vh,880px);position:relative;display:grid;grid-template-columns:1fr 46%;align-items:stretch;overflow:hidden;background:#f4f5f6;color:var(--paper)}.hero-copy-wrap{position:relative;z-index:2;display:flex;align-items:center;padding:90px max(26px,calc((100vw - 1160px)/2)) 75px max(26px,calc((100vw - 1160px)/2));margin-right:-95px}.hero-copy{max-width:650px}.hero .eyebrow{margin:0 0 24px}.hero h1{font:clamp(76px,10.5vw,138px)/.8 var(--serif);font-weight:400;letter-spacing:-.075em;margin:0 0 32px}.hero h1 span{display:block;color:var(--silver);font-size:.42em;line-height:1.4;letter-spacing:.015em;font-style:italic;padding-left:.1em}.hero-intro{max-width:430px;color:#5e6770;font:18px/1.7 var(--serif);margin:0 0 34px}.date-l…2844 tokens truncated…button>
+        <p class="privacy-note">Your contact details are used only to organise this celebration and won’t appear on the public page. To change your RSVP later, submit again with the same contact number.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div></section>
+  </main>
+  <footer class="footer">With love, for <span>Calista</span> · XXI · 2026</footer>
+  <script>
+    const eventDate = new Date('2026-11-21T18:30:00+08:00');
+    function updateCountdown(){let distance=Math.max(0,eventDate.getTime()-Date.now());const units={days:86400000,hours:3600000,minutes:60000,seconds:1000};for(const [id,size] of Object.entries(units)){const el=document.getElementById(id);el.textContent=String(Math.floor(distance/size)).padStart(2,'0');distance%=size}}
+    updateCountdown();setInterval(updateCountdown,1000);
+    const form=document.getElementById('rsvp-form');
+    form.addEventListener('submit',async event=>{event.preventDefault();const button=document.getElementById('submit-rsvp');const status=document.getElementById('form-status');const data=Object.fromEntries(new FormData(form).entries());data.partySize=Number(data.partySize);button.disabled=true;button.textContent='Sending…';status.textContent='';try{const response=await fetch('https://calista-kiu-21st.nicholaskiu83.chatgpt.site/api/rsvp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw new Error(result.error||'Please check your details and try again.');status.textContent='Thank you — your RSVP has been received. We can’t wait to celebrate with you! 🤍';form.reset();document.getElementById('party-size').value='1'}catch(error){status.textContent=error.message==='Failed to fetch'?'We couldn’t send that just now. Please try again in a moment.':error.message}finally{button.disabled=false;button.textContent='Send RSVP'} });
+  </script>
+</body>
+</html>
